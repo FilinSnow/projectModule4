@@ -4,10 +4,11 @@ const AddTask = (props) => {
   return (
       <div className='container__input-btn'>
         <div className="container__input">
-          <input type="text"/>
+          <input type="text" value={props.valueTask}
+                 onChange={(e) => props.changeStateInput(e.target.value)}/>
         </div>
         <div className="container__btn">
-          <button>Add Task</button>
+          <button onClick={() => props.addTask()}>Add Task</button>
         </div>
       </div>
   );
