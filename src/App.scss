@@ -24,31 +24,31 @@
   display: flex;
   justify-content: center;
 
-  .container__input {
-    input {
+    .container__input {
+      input {
       font-size: 25px;
       padding: 5px 10px;
+      }
     }
-  }
 
-  .container__btn {
+    .container__btn {
     margin-left: 10px;
 
-    button {
+      button {
       padding: 5px 10px;
       height: 100%;
       cursor: pointer;
+      }
     }
-  }
 }
 
 .container__tasks {
   max-width: 600px;
   margin: 30px auto 0;
-  .task {
+    .task {
     margin-top: 10px;
-  }
-  .task:first-child {
+    }
+    .task:first-child {
     margin-top: 0;
-  }
+    }
 }

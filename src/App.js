@@ -1,10 +1,10 @@
 import React from "react";
 
 import Header from "./Components/Header/Header";
-
-import './App.scss';
 import AddTask from "./Components/AddTask/AddTask";
 import ListTasks from "./Components/ListTasks/ListTasks";
+
+import './App.scss';
 
 const App = () => {
   const tasks = [
