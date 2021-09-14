@@ -2,9 +2,10 @@ import React, {useState} from "react";
 
 import Header from "./Components/Header/Header";
 import AddTask from "./Components/AddTask/AddTask";
-import ListTasks from "./Components/ListTasks/ListTasks";
+import ListTasksContainer from "./Components/ListTasksContainer/ListTasksContainer";
 
 import './App.scss';
+
 
 const App = () => {
   const [valueTask, setValueTask] = useState('');
@@ -36,7 +37,7 @@ const App = () => {
       <div className="wrapper">
         <Header/>
         <AddTask valueTask={valueTask} changeStateInput={changeStateInput} addTask={addTask}/>
-        <ListTasks tasks={tasks}/>
+        <ListTasksContainer />
       </div>
   );
 }
