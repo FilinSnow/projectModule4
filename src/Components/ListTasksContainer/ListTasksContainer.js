@@ -1,16 +1,20 @@
-import React, {useEffect} from "react";
+import React from "react";
 import {connect} from "react-redux";
-import {thunkGetTasks} from "../Reducers/TasksReducer";
+import {actionChangeInp, thunkDeleteTask, thunkEditTask, thunkGetTasks} from "../Reducers/TasksReducer";
+
 import ListTasks from "./ListTasks";
 
 
 const ListTasksContainer = (props) => {
-  useEffect(() => {
-    props.thunkGetTasks()
-  }, [])
+
   return (
       <div>
-        <ListTasks tasks={props.tasks}/>
+        <ListTasks actionChangeInp={props.actionChangeInp}
+                   thunkEditTask={props.thunkEditTask}
+                   thunkGetTasks={props.thunkGetTasks}
+                   tasks={props.tasks}
+                   thunkDeleteTask={props.thunkDeleteTask}
+        />
       </div>
   );
 }
@@ -21,4 +25,9 @@ const mapStateToProps = (state) => {
   }
 }
 
-export default connect(mapStateToProps, {thunkGetTasks})(ListTasksContainer);
+export default connect(mapStateToProps, {
+  actionChangeInp,
+  thunkGetTasks,
+  thunkDeleteTask,
+  thunkEditTask
+})(ListTasksContainer);

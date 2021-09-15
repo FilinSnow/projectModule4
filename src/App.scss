@@ -48,9 +48,45 @@
 
   .task {
     margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    //border: 1px solid black;
+
+    .task__check-text {
+      display: flex;
+      align-self: center;
+
+      .check {
+        margin-right: 5px;
+      }
+    }
+
+    .task__text {
+      align-self: center;
+      .lineThrough {
+        text-decoration: line-through;
+        color: green;
+      }
+    }
+
+    .task__icons {
+      align-self: center;
+      display: flex;
+
+      .icon:nth-child(1) {
+        margin-right: 10px;
+      }
+    }
   }
 
   .task:first-child {
     margin-top: 0;
   }
+}
+
+.img {
+  width: 22px;
+  height: 22px;
+  cursor: pointer;
+  align-self: center;
 }
