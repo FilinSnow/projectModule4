@@ -12,7 +12,7 @@ const ListTasks = (props) => {
       <div className='container__tasks'>
         {props.tasks.map(task => {
           return (
-              <Task tasks={props.tasks} key={task._id} thunkDeleteTask={props.thunkDeleteTask} thunkEditTask={props.thunkEditTask} actionChangeInp={props.actionChangeInp} task={task}/>
+              <Task {...props} key={task._id} task={task}/>
           )
         })}
       </div>

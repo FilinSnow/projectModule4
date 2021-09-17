@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import {Button} from "@material-ui/core";
 
 const AddTask = (props) => {
   const [valueTask, setValueTask] = useState('');
@@ -21,7 +22,9 @@ const AddTask = (props) => {
                  onChange={(e) => changeStateInput(e.target.value)}/>
         </div>
         <div className="container__btn">
-          <button onClick={() => addTask()}>Add Task</button>
+          <Button variant="contained" color="primary" onClick={() => addTask()}>
+            Add Task
+          </Button>
         </div>
       </div>
   );

@@ -1,9 +1,13 @@
+
+
 *, *:before, *:after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-
+body {
+  font-family: 'Roboto';
+}
 .wrapper {
   max-width: 1600px;
   margin: 0 auto;
@@ -45,29 +49,31 @@
 .container__tasks {
   max-width: 600px;
   margin: 30px auto 0;
-
+  //border: 1px solid black;
+  height: 720px;
+  overflow: hidden;
   .task {
     margin-top: 10px;
     display: flex;
     justify-content: space-between;
     //border: 1px solid black;
+    background-color: #000;
+
 
     .task__check-text {
       display: flex;
       align-self: center;
+      font-size: 25px;
+      background-color: #000;
 
-      .check {
-        margin-right: 5px;
+
+
+      .text {
+
       }
     }
 
-    .task__text {
-      align-self: center;
-      .lineThrough {
-        text-decoration: line-through;
-        color: green;
-      }
-    }
+
 
     .task__icons {
       align-self: center;
@@ -83,10 +89,49 @@
     margin-top: 0;
   }
 }
+.container__tasks:hover {
+  overflow-y: auto;
+}
+.check {
+  margin-right: 5px;
+  align-self: center;
+}
+.text-input {
+  padding: 10px;
+  font-size: 25px;
 
+}
 .img {
   width: 22px;
   height: 22px;
   cursor: pointer;
   align-self: center;
 }
+
+.task__text {
+  align-self: center;
+  word-break: break-word;
+
+  p {
+    word-break: break-word;
+  }
+  .lineThrough {
+    text-decoration: line-through;
+    color: green;
+  }
+}
+.MuiTypography-gutterBottom {
+  margin: 0;
+}
+.box {
+  align-self: center;
+  align-items: center;
+  justify-content: space-between;
+}
+.MuiCardContent-root:last-child {
+  padding-bottom: 16px;
+}
+.MuiCardContent-root {
+
+}
+

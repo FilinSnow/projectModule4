@@ -8,14 +8,8 @@ import ListTasks from "./ListTasks";
 const ListTasksContainer = (props) => {
 
   return (
-      <div>
-        <ListTasks actionChangeInp={props.actionChangeInp}
-                   thunkEditTask={props.thunkEditTask}
-                   thunkGetTasks={props.thunkGetTasks}
-                   tasks={props.tasks}
-                   thunkDeleteTask={props.thunkDeleteTask}
-        />
-      </div>
+        <ListTasks {...props} />
+
   );
 }
 

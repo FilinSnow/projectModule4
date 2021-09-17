@@ -61,6 +61,9 @@ export const thunkGetTasks = () => {
   return dispatch => {
     return api.getTasks()
         .then(res => {
+          const copyArrTrue = res.data.data.filter(elem => elem.isCheck === true);
+          const copyArrFalse = res.data.data.filter(elem => elem.isCheck === false);
+          res.data.data = [...copyArrFalse, ...copyArrTrue];
           return dispatch(actionGetTasks(res.data.data))
         })
   }

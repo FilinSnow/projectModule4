@@ -4,6 +4,7 @@ import Header from "./Components/Header/Header";
 import ListTasksContainer from "./Components/ListTasksContainer/ListTasksContainer";
 import AddTaskContainer from "./Components/AddTaskContainer/AddTaskContainer";
 
+import "@fontsource/roboto";
 import './App.scss';
 
 
