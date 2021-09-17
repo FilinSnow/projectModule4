@@ -10,9 +10,8 @@ import Card from '@material-ui/core/Card';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
-
 import Typography from '@material-ui/core/Typography';
-import {Box, Grid} from "@material-ui/core";
+import {Box, Grid, TextField} from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
   margin: {
@@ -43,7 +42,7 @@ const Task = (props) => {
   const [valueInput, setValueInput] = useState(props.task.text);
   const [flagInputDblClck, setFlagInputDblClck] = useState(false);
   const [flagInputEditBtn, setFlagInputEditBtn] = useState(false);
-  // const [, setFlagInput] = useState(false);
+
   const saveChange = (id) => {
     let obj = {
       _id: id,
@@ -85,6 +84,7 @@ const Task = (props) => {
                                changeCheckBox(e, props.task._id)
                          }
                          checked={props.task.isCheck}
+                         hidden={flagInputEditBtn ? true : false}
                   />
                 </div>
                 <Box>
@@ -101,40 +101,41 @@ const Task = (props) => {
                             {props.task.text}
                           </p>
                         </div>
-                        : flagInputEditBtn === false
-                            ? <input
-                            className='text-input'
-                            onFocus={
-                              (e) =>
-                                  selectText(e)
-                            }
-                            onBlur={() => {
-                              setFlagInputDblClck(!flagInputDblClck)
-                              saveChange(props.task._id)
-                            }
-                            }
-                            onChange={
-                              (e) =>
-                                  setValueInput(e.target.value)
-                            }
-                            value={valueInput}
-                            type="text"
-                        />
-                        : <input  className='text-input'
-                                  type="text"
-                                  onChange={
-                                    (e) =>
-                                        setValueInput(e.target.value)
-                                  }
+                        : <Box>
+                          {flagInputEditBtn === false
+                              ? <input
+                                  // fullWidth
+                                  style={{width: '100%'}}
+                                  className='text-input'
                                   onFocus={
                                     (e) =>
                                         selectText(e)
                                   }
+                                  onBlur={() => {
+                                    setFlagInputDblClck(!flagInputDblClck)
+                                    saveChange(props.task._id)
+                                  }
+                                  }
+                                  onChange={
+                                    (e) =>
+                                        setValueInput(e.target.value)
+                                  }
                                   value={valueInput}
-                            />
-
-
-
+                                  type="text"
+                              />
+                              : <input className='text-input'
+                                       type="text"
+                                       onChange={
+                                         (e) =>
+                                             setValueInput(e.target.value)
+                                       }
+                                       onFocus={
+                                         (e) =>
+                                             selectText(e)
+                                       }
+                                       value={valueInput}
+                              />}
+                        </Box>
                   }
                 </Box>
 
@@ -151,9 +152,11 @@ const Task = (props) => {
                     <IconButton aria-label="edit"
                                 className={classes.margin}
                                 color="primary"
+                                disabled={props.task.isCheck ? true : false}
                                 onClick={() => {
                                   setFlagInputDblClck(!flagInputDblClck);
                                   setFlagInputEditBtn(!flagInputEditBtn);
+                                  setValueInput(props.task.text)
                                 }}
                     >
                       <EditIcon fontSize="large"/>
@@ -172,6 +175,7 @@ const Task = (props) => {
                                 onClick={() => {
                                   setFlagInputDblClck(!flagInputDblClck);
                                   setFlagInputEditBtn(!flagInputEditBtn);
+                                  setValueInput('')
                                 }}
                     >
 

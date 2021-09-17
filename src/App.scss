@@ -1,13 +1,14 @@
 
-
 *, *:before, *:after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
 body {
   font-family: 'Roboto';
 }
+
 .wrapper {
   max-width: 1600px;
   margin: 0 auto;
@@ -27,11 +28,14 @@ body {
   margin-top: 40px;
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
+  padding: 0 5px;
 
   .container__input {
     input {
       font-size: 25px;
       padding: 5px 10px;
+      width: 100%;
     }
   }
 
@@ -52,6 +56,7 @@ body {
   //border: 1px solid black;
   height: 720px;
   overflow: hidden;
+
   .task {
     margin-top: 10px;
     display: flex;
@@ -67,12 +72,10 @@ body {
       background-color: #000;
 
 
-
       .text {
 
       }
     }
-
 
 
     .task__icons {
@@ -89,18 +92,23 @@ body {
     margin-top: 0;
   }
 }
+
 .container__tasks:hover {
   overflow-y: auto;
 }
+
 .check {
   margin-right: 5px;
   align-self: center;
 }
+
 .text-input {
   padding: 10px;
   font-size: 25px;
+  width: 100%;
 
 }
+
 .img {
   width: 22px;
   height: 22px;
@@ -115,23 +123,34 @@ body {
   p {
     word-break: break-word;
   }
+
   .lineThrough {
     text-decoration: line-through;
     color: green;
   }
 }
+
 .MuiTypography-gutterBottom {
   margin: 0;
 }
+
 .box {
   align-self: center;
   align-items: center;
   justify-content: space-between;
 }
+
 .MuiCardContent-root:last-child {
   padding-bottom: 16px;
 }
-.MuiCardContent-root {
 
+@media screen and (max-width: 433px) {
+  .container__btn {
+    margin-top: 10px;
+    margin-left: 0;
+  }
+  .container__tasks {
+    //height: 400px;
+    height: 100%;
+  }
 }
-
